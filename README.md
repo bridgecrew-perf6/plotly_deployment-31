@@ -4,6 +4,7 @@ A screenshot of the main section of the page (the bubble chart is a bit cut off)
 
 ## Deliverable 1, 2, and 3
 All deliverables were completed as stated.  Any alterations to chart or page functionality are discussed in depth in **Deliverable 4**.
+- At one point, CORS errors resulted in my using "http://localhost:8000/static/data/samples.json" as the json link in [charts.js](static/js/charts.js).  However, upon finalizing my code, the page would run without it as long as a python http server was running in the folder (command: `python -m http.server`).
 
 ## Deliverable 4
 A number of changes to the deliverable functionality were made, as follows:
@@ -11,10 +12,7 @@ A number of changes to the deliverable functionality were made, as follows:
 ### Jumbotron
 - The jumbotron was made to only take up 6 columns instead of twelve.  Two 3-width columns were created on each side to hold some GIF formatted images.
 - Bootstrapping size was adjusted from col-md-* to col-xs-*, so that the mobile page doesnt have the images and jumbotron text stacking on top of each other.
-- Two GIF images were inserted using CSS styling to make sure they stay within their containers.
-```
-style='height: 100%; width: 100%; object-fit: contain'
-```
+- Two GIF images were inserted using CSS styling to make sure they stay within their containers. `style='height: 100%; width: 100%; object-fit: contain'`
 
 ### Data "Mining"
 A few pieces of data were extracted beyond simply drawing from [samples.json](static/data/samples.json):
