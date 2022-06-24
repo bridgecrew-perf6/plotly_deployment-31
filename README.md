@@ -1,6 +1,6 @@
 # Bacteria and Belly Buttons
 
-A screenshot of the main section of the page (the bubble chart is a bit cut off) can be found in [this image file](BellyButtonPageScreenshot.png).
+A screenshot of the main section of the page (the bubble chart is a bit cut off) can be found in [this image file](static/images/BellyButtonPageScreenshot.png).
 
 ## Deliverable 1, 2, and 3
 All deliverables were completed as stated.  Any alterations to chart or page functionality are discussed in depth in **Deliverable 4**.
@@ -17,7 +17,7 @@ style='height: 100%; width: 100%; object-fit: contain'
 ```
 
 ### Data "Mining"
-A few pieces of data were extracted beyond simply drawing from [samples.json](samples.json):
+A few pieces of data were extracted beyond simply drawing from [samples.json](static/data/samples.json):
 - During Deliverable 1, rather than extract the top 10 reversed OTU IDs each time, I wrote a function, topTenReversed(...), to take an array and mapping function and return the desired results.  The map function was required, as the OTU IDs needed to be converted to strings for the ytick labels, while the other arrays did not.
 - The OTU labels were split by ';' into an array of Bacterial nomenclature terms, from Kingdom towards Genus.  Not every one is the same, but the last cell of the array always contains the most specific nomenclature, and this is what was returned by the map function.  This was used for extra features in Deliverable 4.
 - For the Washing Frequency values, both the maximum value (which turned out to be 9) and the average overall value were calculated for use in the Gauge Chart.
