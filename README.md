@@ -1,5 +1,7 @@
 # Bacteria and Belly Buttons
 
+A screenshot of the main section of the page (the bubble chart is a bit cut off) can be found in [this image file](BellyButtonPageScreenshot.png).
+
 ## Deliverable 1, 2, and 3
 All deliverables were completed as stated.  Any alterations to chart or page functionality are discussed in depth in **Deliverable 4**.
 
@@ -22,7 +24,9 @@ A few pieces of data were extracted beyond simply drawing from [samples.json](sa
 
 ### Bar Chart
 - A *hovertemplate:* was used in the trace to incorporate a better formatted hover box for the bar.  This also used only the most specific nomenclature term available, and also displayed a link to Wikipedia with that term in the page URL.
-- At the end of the buildCharts(...) function, a Plotly click-event-listener was attached to the bar chart, opening the Wikipedia link for that bacteria in a new tab on a click on a particular bar.
+- At the end of the buildCharts(...) function, a Plotly click-event-listener was attached to the bar chart, opening the Wikipedia link for that bacteria in a new tab on a click on a particular bar.  Possible improvements here include:
+- - Handling a page that doesn't exist (for example, Sample 940 and OTU 2264, with an identifier of "IncertaeSedisXI") - Wikipedia does handle that uncertainty already, so it may be less of an issue.
+- - Trying to improve the quality of data collected - some pages simply link to the Wikipedia page for [Bacteria](https://en.wikipedia.org/wiki/Bacteria), as that is the most specific identifier in the samples data.
 
 ### Gauge Chart
 - Rather than defaulting the maximum value to 10, the maximum value for the Gauge is set to maxWfreqs + 1 (which turns out to be 10 in this dataset's case).  Likewise, the tick values are calculated in increments of 1/5 the maximum value.  This allows the Gauge to theoretically adjust itself if more data, with Belly Button Washing Frequencies > 9, were to exist in a newer dataset.
