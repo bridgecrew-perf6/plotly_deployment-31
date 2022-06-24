@@ -94,7 +94,7 @@ function buildCharts(sample) {
       x: xvals,
       y: yticks,
       hovertemplate: `<b>Sample Value</b>: %{x}` +
-                     `<br><b>Identifier</b>: %{text}` +
+                     `<br><b>Most Specific Identifier</b>: %{text}` +
                      `<br><b>Wikipedia Link</b>: https://en.wikipedia.org/wiki/%{text}`,
       text: hoversSplit,
       type: "bar",
@@ -102,7 +102,8 @@ function buildCharts(sample) {
     }];
     // 9. Create the layout for the bar chart. 
     var barLayout = {
-      title: "Top 10 Bacterial Cultures",
+      title: "<b>Top 10 Bacterial Cultures</b>" +
+              "<br>Click on a Bar to Open<br>Wikipedia for that Bacteria",
       hovermode: "closest"
     };
     // 10. Use Plotly to plot the data with the layout. 
@@ -184,11 +185,14 @@ function buildCharts(sample) {
     // 6. Use Plotly to plot the gauge data and layout.
     Plotly.newPlot("gauge", gaugeData, gaugeLayout);
 
+    // Use *.on to attach a click-event to the Bar Chart,
+    // opening the corresponding Wikipedia link in a new tab on click.
     var barPlot = document.getElementById('bar');
     barPlot.on('plotly_click', function(data){
       barText = data.points[0].text;
       URL = `https://en.wikipedia.org/wiki/${barText}`;
       window.open(URL, "_blank");
     });
+
   });
 }
