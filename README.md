@@ -1,5 +1,7 @@
 # Bacteria and Belly Buttons
 
+A screenshot of the main section of the page (the bubble chart is a bit cut off) can be found in [this image file](BellyButtonPageScreenshot.png).
+
 ## Deliverable 1, 2, and 3
 All deliverables were completed as stated.  Any alterations to chart or page functionality are discussed in depth in **Deliverable 4**.
 
